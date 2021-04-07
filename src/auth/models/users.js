@@ -22,10 +22,6 @@ const usersSchema = new mongoose.Schema({
     enum: ['user','editor', 'admin']
   },
 });
-// }, { toObject: { getters: true } }); // What would this do if we use this instead of just });
-
-// Adds a virtual field to the schema. We can see it, but it never persists
-// So, on every user object ... this.token is now readable!
 
 usersSchema.virtual('token').get(function () {
   let tokenObject = {

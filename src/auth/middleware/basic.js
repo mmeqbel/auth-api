@@ -10,7 +10,10 @@ module.exports = async (req, res, next) => {
   }
   try {
   //ex : req.headers.authorization = Basic dGVzdDp0ZXN0;
-  let basic = req.headers.authorization.split(' ').pop();
+  let lineArray=req.headers.authorization.split(' ');
+  let basic = lineArray.pop();
+
+  
   //ex : base64.decode(basic) = test:test
   //array destructure : now user and pass are seperated variables
   let [user, pass] =base64.decode(basic).split(':');

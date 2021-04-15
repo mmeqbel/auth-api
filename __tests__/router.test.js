@@ -44,6 +44,7 @@ describe('Auth Router', () => {
         const response = await mockRequest.post('/signin')
           .auth(users[userType].username, users[userType].password);
         const token = response.body.token;
+        
         // First, use basic to login to get a token
         const bearerResponse = await mockRequest
           .get('/users')

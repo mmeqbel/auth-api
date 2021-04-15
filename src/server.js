@@ -28,7 +28,7 @@ app.use(authRoutes);
 app.use(v1Routes);
 app.use(v2Routes);
 
-// Catchalls
+//Catchalls
 app.use(notFound);
 app.use(errorHandler);
 

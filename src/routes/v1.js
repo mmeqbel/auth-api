@@ -28,11 +28,11 @@ router.param('model', (req, res, next) => {
   }
 });
 
-router.get('/:model', handleGetAll);
-router.get('/:model/:id', handleGetOne);
-router.post('/:model', handleCreate);
-router.put('/:model/:id', handleUpdate);
-router.delete('/:model/:id', handleDelete);
+router.get('/api/v1/:model', handleGetAll);
+router.get('/api/v1/:model/:id', handleGetOne);
+router.post('/api/v1/:model', handleCreate);
+router.put('/api/v1/:model/:id', handleUpdate);
+router.delete('/api/v1/:model/:id', handleDelete);
 
 async function handleGetAll(req, res) {
   let allRecords = await req.model.get();

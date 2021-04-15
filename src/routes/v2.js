@@ -31,11 +31,11 @@ router.param('model', (req, res, next) => {
   }
 });
 
-router.get('api/v2/:model',bearerAuth, handleGetAll);
-router.get('api/v2/:model/:id',bearerAuth, handleGetOne);
-router.post('api/v2/:model',bearerAuth,permissions('create'), handleCreate);
-router.put('api/v2/:model/:id',bearerAuth,permissions('create'), handleUpdate);
-router.delete('api/v2/:model/:id',permissions('delete'), handleDelete);
+router.get('/api/v2/:model',bearerAuth, handleGetAll);
+router.get('/api/v2/:model/:id',bearerAuth, handleGetOne);
+router.post('/api/v2/:model',bearerAuth,permissions('create'), handleCreate);
+router.put('/api/v2/:model/:id',bearerAuth,permissions('create'), handleUpdate);
+router.delete('/api/v2/:model/:id',permissions('delete'), handleDelete);
 
 async function handleGetAll(req, res) {
   let allRecords = await req.model.get();
